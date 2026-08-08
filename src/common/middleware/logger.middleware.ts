@@ -1,4 +1,4 @@
-import { Module, NestMiddleware } from '@nestjs/common';
+import { NestMiddleware } from '@nestjs/common';
 
 export class LoggerMidleware implements NestMiddleware {
   use(req: any, res: any, next: (error?: any) => void) {
