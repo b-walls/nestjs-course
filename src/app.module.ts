@@ -9,6 +9,8 @@ import { DevConfigService } from './common/providers/DevConfigService';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { Song } from './songs/songs.entity';
+import { User } from './users/user.entity';
+import { Artist } from './artists/artist.entity';
 
 const devConfig = { port: 3000 };
 const prodConfig = { port: 4000 };
@@ -24,7 +26,7 @@ const prodConfig = { port: 4000 };
       username: 'username',
       password: 'db_password',
       database: 'nest_course',
-      entities: [Song],
+      entities: [Song, User, Artist],
       synchronize: true,
     }),
   ],

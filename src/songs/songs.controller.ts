@@ -24,13 +24,7 @@ import { Pagination } from 'nestjs-typeorm-paginate';
 
 @Controller('songs')
 export class SongsController {
-  constructor(
-    private songsService: SongsService,
-    @Inject('CONNECTION')
-    private connection: Connection,
-  ) {
-    console.log(`connection string: ${this.connection.CONNECTION_STRING}`);
-  }
+  constructor(private songsService: SongsService) {}
 
   @Post()
   create(@Body() createSongDTO: CreateSongDTO): Promise<Song> {
